@@ -1,0 +1,186 @@
+ /* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f3f7f6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(34, 193, 195, 0.8);
+    color: white;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.hero {
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Évite les débordements */
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste l'image pour remplir tout sans déformation */
+    z-index: 0; /* Place l'image en arrière-plan */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 128, 128, 0.6), rgba(0, 204, 204, 0.6));
+    mix-blend-mode: overlay; /* Applique l'effet de couleur directement sur l'image */
+    z-index: 1; /* Place l'effet au-dessus de l'image */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Place le contenu au-dessus de tout */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+ 
+
+ 
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('../res/p1.jpeg') no-repeat center center/cover;
+    color: white;
+    position: relative;
+}
+
+/* Optionnel : Superposition sombre pour le texte */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Effet sombre */
+    z-index: 1;
+}
+
+.hero h2,
+.hero p,
+.hero .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #22c1c3, #f3f7f6);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: #084c61;
+}
+
+/* Articles Section */
+.articles {
+    padding: 4rem 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.article-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.article-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.article-item:hover {
+    transform: translateY(-10px);
+}
+
+.article-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.article-item h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #084c61;
+}
+
+.article-item p {
+    padding: 0 1rem 1rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
